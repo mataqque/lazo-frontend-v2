@@ -1,0 +1,293 @@
+.btn-session-user {
+	display: flex;
+	&:hover {
+		.options_session {
+			display: flex;
+			height: max-content;
+		}
+	}
+	.options_session {
+		.link {
+			&:hover {
+				.text-letter {
+					color: white;
+				}
+			}
+		}
+	}
+}
+//select
+@keyframes showOptions {
+	0% {
+		max-height: 0;
+		/* opacity: 0; */
+		opacity: 1;
+	}
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		max-height: 10rem;
+	}
+}
+@keyframes closeOptions {
+	0% {
+		max-height: 10rem;
+		opacity: 1;
+		border: 1px solid #e3e3e3a6;
+		height: max-content;
+	}
+	30% {
+		opacity: 1;
+	}
+	99% {
+		border: 0px solid #e3e3e3a6;
+	}
+	100% {
+		opacity: 1;
+		height: 0;
+		max-height: 0rem;
+	}
+}
+.options {
+	height: 0;
+	opacity: 0;
+	&.active {
+		height: max-content;
+		border: 1px solid #e3e3e3a6;
+		box-shadow: 0px 8px 15px -9px #0000004d;
+		animation: showOptions 0.2s linear forwards;
+	}
+	&.close {
+		height: 0;
+		opacity: 0;
+		border: 0;
+		box-shadow: 0px 8px 15px -9px #0000004d;
+		animation: closeOptions 0.2s linear forwards;
+	}
+}
+.content-options {
+	overflow: auto;
+	max-height: 10rem;
+	&.scroll {
+		&::-webkit-scrollbar-thumb {
+			background-color: '#3f0a85';
+		}
+	}
+}
+.option {
+	height: 28px;
+	min-height: 28px;
+	width: 100%;
+	padding: 0 0.5rem;
+	display: flex;
+	align-items: center;
+	transition: 0.2s;
+	cursor: pointer;
+	user-select: none;
+	&:hover {
+		background-color: #f2f2f2;
+	}
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-2px);
+	}
+	60% {
+		transform: translateY(-1px);
+	}
+}
+.bounce {
+	animation: bounce 2s infinite;
+}
+.card {
+	transition: 0.4s ease-in-out box-shadow;
+	&:hover {
+		box-shadow: 1px 6px 12px -1px #f4e5e5;
+	}
+	@media (max-width: 500px) {
+		box-shadow: 1px 6px 12px -1px #e7d5d5;
+	}
+}
+.content-sidebar {
+	border: 1px solid #ffebeb;
+	box-shadow: 1px 6px 12px -1px #f4e5e5;
+	.item-sidebar {
+		&:last-child::before {
+			display: none;
+		}
+	}
+}
+
+///
+.y-hidden {
+	overflow: hidden;
+	display: flex;
+}
+.animate-0 {
+	transition-delay: 0.5s;
+}
+.animate-1 {
+	transition-delay: 0.5s;
+}
+.animate-2 {
+	transition-delay: 0.5s;
+}
+.animate-3 {
+	transition-delay: 0.5s;
+}
+.animate-4 {
+	transition-delay: 0.5s;
+}
+.animate-5 {
+	transition-delay: 0.5s;
+}
+.animate-6 {
+	transition-delay: 0.5s;
+}
+.animate-7 {
+	transition-delay: 0.5s;
+}
+.animate-8 {
+	transition-delay: 0.5s;
+}
+.animate-9 {
+	transition-delay: 0.5s;
+}
+///
+.animate-0.active {
+	transition-delay: 0.5s;
+}
+.animate-1.active {
+	transition-delay: 0.7s;
+}
+.animate-2.active {
+	transition-delay: 0.8s;
+}
+.animate-3.active {
+	transition-delay: 1s;
+}
+.animate-4.active {
+	transition-delay: 1.2s;
+}
+.animate-5.active {
+	transition-delay: 1.3s;
+}
+.animate-6.active {
+	transition-delay: 1.4s;
+}
+.animate-7.active {
+	transition-delay: 1.5s;
+}
+.animate-8.active {
+	transition-delay: 1.6s;
+}
+.animate-9.active {
+	transition-delay: 1.7s;
+}
+.animate-10.active {
+	transition-delay: 1.8s;
+}
+.animate-11.active {
+	transition-delay: 1.9s;
+}
+.animate-12.active {
+	transition-delay: 2s;
+}
+.animate-13.active {
+	transition-delay: 2.1s;
+}
+.animate-14.active {
+	transition-delay: 2.2s;
+}
+.animate-15.active {
+	transition-delay: 2.3s;
+}
+.animate-15.active {
+	transition-delay: 2.4s;
+}
+.animate-15.active {
+	transition-delay: 2.5s;
+}
+.animate-15.active {
+	transition-delay: 2.6s;
+}
+.animate {
+	transform: translateY(100%);
+	&.active {
+		animation: 2s FadeUp forwards 0.3s;
+		transition-duration: 0.6s;
+		transform: translateY(0);
+	}
+	@keyframes FadeUp {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+.target_about {
+	transition: 0.5s;
+	.target-front {
+		transition: 0.5s;
+		transform: rotateY(0deg);
+		z-index: 1;
+		backface-visibility: hidden;
+	}
+	.target-back {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		background-color: var(--secondary);
+		// transform: rotateY(180deg);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: rotateY(180deg);
+		transition: 0.5s;
+		.sub-title {
+			font-size: 1.1rem;
+		}
+		.name {
+			font-size: 1.4rem;
+			text-align: center;
+		}
+		.content-icon {
+			width: 3rem;
+			height: 3rem;
+			border-radius: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0.5rem;
+			.icon-github {
+				transform: scale(1.1);
+			}
+		}
+		.mask {
+			background-color: var(--third);
+			width: 40%;
+			height: 40%;
+		}
+	}
+	&:hover {
+		.target-back {
+			transform: rotateY(0deg);
+		}
+		.target-front {
+			transform: rotateY(-180deg);
+		}
+	}
+}
