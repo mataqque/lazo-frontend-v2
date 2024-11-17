@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<Layout>
 			<Whatsapp />
-			<main className='main pt-[8.3rem] animated bg-[#fff5f5] mobile:pt-[7rem]'>
+			<main className='main animated bg-[#fff5f5]'>
 				<SectionHeader />
 			</main>
 		</Layout>

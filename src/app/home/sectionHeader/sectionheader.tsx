@@ -12,11 +12,10 @@ import { memo, useRef, useState } from 'react';
 import { settingsHeader } from './config';
 import Link from 'next/link';
 import { WrapperText } from '@/components/ui/animation/wordping';
-interface IPropsSectionHeader {
-	title: string;
-	subtitle: string;
-	className?: string;
-}
+import { LinkPath } from '@/components/ui/link/link';
+import { Route } from '@/app/client/[...client]/routeType';
+import { $path } from 'next-typesafe-url';
+
 export const SectionHeader = memo(function Section({}) {
 	const [indexActive, setIndexActive] = useState(0);
 	const refSlick = useRef<Slider>(null);
@@ -77,8 +76,10 @@ export const SectionHeader = memo(function Section({}) {
 											{item.title}
 										</WrapperText>
 										<Link
-											href={item.link}
-											className='bg-secondary text-white rounded-full border border-solid border-secondary h-12 w-full flex items-center justify-center gap-3 px-8 hover:bg-secondary group transition duration-300 w-max'
+											href={$path({
+												route: '/client/[...client]',
+											})}
+											className='bg-secondary text-white rounded-full border border-solid border-secondary h-12 flex items-center justify-center gap-3 px-8 hover:bg-secondary group transition duration-300 w-max'
 										>
 											Ver productos
 										</Link>
