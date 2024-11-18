@@ -13,8 +13,6 @@ import { settingsHeader } from './config';
 import Link from 'next/link';
 import { WrapperText } from '@/components/ui/animation/wordping';
 import { LinkPath } from '@/components/ui/link/link';
-import { Route } from '@/app/client/[...client]/routeType';
-import { $path } from 'next-typesafe-url';
 
 export const SectionHeader = memo(function Section({}) {
 	const [indexActive, setIndexActive] = useState(0);
@@ -24,19 +22,19 @@ export const SectionHeader = memo(function Section({}) {
 			title: 'REGALOS PARA TUS MOMENTOS ESPECIALES',
 			image: banner,
 			image_mobile: mobile_banner,
-			link: '/regalos/flores',
+			type: 'flores',
 		},
 		{
 			title: 'PÍDELO DESDE DE LA COMIDAD DE TU HOGAR',
 			image: pedido,
 			image_mobile: mobile_pedido,
-			link: '/regalos/accesorios-tecnologicos',
+			type: 'regalos',
 		},
 		{
 			title: 'TENEMOS LO QUE NECESITAS',
 			image: banner_accesorios,
 			image_mobile: mobile_banner_accesorios,
-			link: '/regalos/maquillaje',
+			type: 'accesorios',
 		},
 	];
 	const beforeChange = (current: any, next: any) => {
@@ -75,14 +73,15 @@ export const SectionHeader = memo(function Section({}) {
 										>
 											{item.title}
 										</WrapperText>
-										<Link
-											href={$path({
-												route: '/client/[...client]',
-											})}
+										<LinkPath
+											href={{
+												route: '/regalos/[...category]',
+												routeParams: { category: [item.type] },
+											}}
 											className='bg-secondary text-white rounded-full border border-solid border-secondary h-12 flex items-center justify-center gap-3 px-8 hover:bg-secondary group transition duration-300 w-max'
 										>
 											Ver productos
-										</Link>
+										</LinkPath>
 									</div>
 								</div>
 							</div>
