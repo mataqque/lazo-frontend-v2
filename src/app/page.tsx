@@ -8,6 +8,7 @@ export default function Home() {
 			<Whatsapp />
 			<main className='main animated bg-[#fff5f5]'>
 				<SectionHeader />
+				hola mundo
 			</main>
 		</Layout>
 	);

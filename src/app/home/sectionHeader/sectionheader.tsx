@@ -10,7 +10,7 @@ import mobile_banner_accesorios from '../../../assets/multimedia/images/banner/m
 
 import { memo, useRef, useState } from 'react';
 import { settingsHeader } from './config';
-import Link from 'next/link';
+
 import { WrapperText } from '@/components/ui/animation/wordping';
 import { LinkPath } from '@/components/ui/link/link';
 
