@@ -1,14 +1,17 @@
 import Layout from '@/components/layout/layout';
 import { Whatsapp } from '@/components/ui/global/whatsapp/whatsapp';
 import { SectionHeader } from './home/sectionHeader/sectionheader';
+import { SectionCollectionCategory } from './regalos/sectionColletion/sectioncollection';
+import { fetchingHome } from './fetching/home';
 
-export default function Home() {
+export default async function Home() {
+	const data = await fetchingHome();
 	return (
 		<Layout>
 			<Whatsapp />
 			<main className='main animated bg-[#fff5f5]'>
 				<SectionHeader />
-				hola mundo
+				<div className='bg-rose'>{/* <SectionCollectionCategory products={}></SectionCategory> */}</div>
 			</main>
 		</Layout>
 	);
