@@ -1,0 +1,38 @@
+.compact_links {
+	&:hover {
+		.sub_links {
+			transition: 0.5s;
+			height: max-content;
+		}
+	}
+	.link {
+		&:hover {
+			.text-letter {
+				color: white;
+			}
+		}
+	}
+}
+.nav {
+	box-shadow: 0px 0px 17px 3px #002d3e8c;
+	.component-nav {
+		.toggle {
+			.line {
+				position: relative;
+				transition: 0.3s top, 0.3s transform;
+			}
+			&.open {
+				.line {
+					&:nth-child(1) {
+						top: 4.5px;
+						transform: rotate(45deg);
+					}
+					&:nth-child(2) {
+						top: -4.5px;
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-export const URL_BASE_BACKEND: string = 'http://strapi:5000/api/v1';
+export const URL_BASE_BACKEND: string = 'http://lazo_backend:1337/api/v1';
 export const URL_BASE_API_BACKEND: string = '/api/v1';
 
 //data delivery

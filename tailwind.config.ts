@@ -28,12 +28,12 @@ module.exports = {
                 gradientleft: 'linear-gradient(90deg, rgb(152, 97, 90) 0%, rgb(129, 72, 50) 83%, rgb(125, 67, 42) 100%)',
             },
             colors: {
+                primary: '#FB6F92',
+                secondary: '#00526a',
                 dark: '#0E0E0E',
                 dark2: '#D4D4D4',
                 dark3: '#868686',
                 dark4: '#4B4B4A',
-                primary: '#44503A',
-                secondary: '#0098D9',
                 third: '#D9E41B',
                 fourth: '#fff5f5',
                 letterinput: '#828282',
@@ -51,9 +51,6 @@ module.exports = {
                 bordersky: '#dee1ef',
                 sky: '#f3f4f6',
                 letter: '#7e889b',
-                castilla: '#447c65',
-                monte_sierpe: '#3E4F47',
-
                 green: {
                     100: '#39c6a4',
                 },

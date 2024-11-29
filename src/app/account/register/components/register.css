@@ -1,0 +1,17 @@
+.content-forms {
+  width: 21rem;
+}
+.content-forms .react-tel-input .form-control {
+  height: 3rem;
+  width: 100%;
+  border: 1px solid var(--border);
+  padding-left: 57px;
+}
+.content-forms .react-tel-input .selected-flag {
+  width: 47px !important;
+  padding-right: 5px !important;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=register.css.map */

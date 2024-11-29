@@ -4,6 +4,7 @@ import '@/assets/scss/index.scss';
 import '@/assets/scss/index.css';
 import StoreProvider from '@/store/provider';
 import { Framer } from '@/lib/framer';
+import AuthProvider from '@/components/ui/global/AuthProvider';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -21,9 +22,11 @@ export default function RootLayout({
 			<link rel='icon' href='/favicon.svg' sizes='any' type='image/x-icon' />
 			<meta name='viewport' content='width=device-width,height=device-height,initial-scale=1,maximum-scale=1' />
 			<body className={`root`}>
-				<StoreProvider>
-					<Framer>{children}</Framer>
-				</StoreProvider>
+				<AuthProvider>
+					<StoreProvider>
+						<Framer>{children}</Framer>
+					</StoreProvider>
+				</AuthProvider>
 			</body>
 		</html>
 	);

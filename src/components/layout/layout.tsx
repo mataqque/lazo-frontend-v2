@@ -4,13 +4,14 @@
 // import { Framer } from './framer';
 // import { Navbar } from './navbar/navbar';
 
+import { Navbar } from '../page/navbar/navbar';
 import { CartBuy } from '../ui/global/cartBuy/cartBuy';
 import Toast from '../ui/toast/toast';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
-			{/* <Navbar /> */}
+			<Navbar />
 			<CartBuy></CartBuy>
 			{/* <Modal index={11}>
 				<ModalHome></ModalHome>

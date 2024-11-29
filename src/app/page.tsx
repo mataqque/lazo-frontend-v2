@@ -6,6 +6,7 @@ import { fetchingHome } from './fetching/home';
 
 export default async function Home() {
 	const data = await fetchingHome();
+	console.log(data);
 	return (
 		<Layout>
 			<Whatsapp />

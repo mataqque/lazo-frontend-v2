@@ -14,6 +14,10 @@ declare module "@@@next-typesafe-url" {
   }
 
   interface StaticRouter {
+    "/account/login": StaticRoute;
+    "/account/recoveryPassword": StaticRoute;
+    "/account/register": StaticRoute;
     "/": StaticRoute;
+    "/regalos": StaticRoute;
   }
 }
