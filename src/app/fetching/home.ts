@@ -1,14 +1,28 @@
 import { URL_BASE_BACKEND } from "@/store/config";
+import { Category, IProductSchema } from "@/store/interface/global.interface";
+import { Meta } from "@/store/interface/products.interface";
 
-interface IProps {
-    DCategories: any;
-    DProducts: any;
+export interface IResHome {
+    DCategories: {
+        data: Category[];
+        meta: Meta
+    };
+    DProducts: {
+        data: IProductSchema[];
+        meta: Meta
+    };
 }
 
-export const fetchingHome = async (): Promise<any> => {
-    const DCategories = await fetch(`${URL_BASE_BACKEND}/sentences`, { cache: 'no-cache' })
+export const fetchingHome = async (): Promise<IResHome> => {
+    const categories = await fetch(`${URL_BASE_BACKEND}/categories?populate=*`, { cache: 'no-cache' })
         .then(res => res.json())
         .catch(error => console.error(error));
+
+    const products = await fetch(`${URL_BASE_BACKEND}/products?populate=*`, { cache: 'no-cache' })
+        .then(res => res.json())
+        .catch(error => console.error(error));
+
+    return { DCategories: categories, DProducts: products };
     // try {
     //     const DCategories = await fetch(`${URL_BASE_BACKEND}/categories?populate=*`, { cache: 'no-cache' })
     //         .then(res => res.json())

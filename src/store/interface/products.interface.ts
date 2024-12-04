@@ -65,41 +65,6 @@ export interface Pagination {
 	total: number;
 }
 
-export interface IProductSchema {
-	id: number;
-	cant: number;
-	selected: boolean;
-	liked: boolean;
-	attributes: {
-		nameproduct: string;
-		description: string;
-		date: string;
-		slug: string;
-		resume: string;
-		price: number;
-		createdAt: string;
-		updatedAt: string;
-		publishedAt: string;
-		cant: number;
-		image: {
-			data: ImageProduct[];
-		};
-		category: {
-			data?: {
-				id: number;
-				attributes: {
-					name: string;
-					createdAt: string;
-					updatedAt: string;
-					publishedAt: string;
-					Description: string | null;
-					slug: string;
-				};
-			};
-		};
-	};
-}
-
 export interface ImageProduct {
 	id: number;
 	attributes: {

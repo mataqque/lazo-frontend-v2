@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { CartbuyState } from '../interface';
 import { PRICE_DELIVERY, SEND_FREE } from '../config';
-import { IProductSchema } from '../interface/products.interface';
+import { IProductSchema } from '../interface/global.interface';
 
 const CalculateTotal = (items: IProductSchema[]) => {
 	if (items.length > 0) {
 		const total = items.reduce((acc: any, product: IProductSchema) => {
-			return acc + product.attributes.price * product.cant;
+			return acc + product.price * product.cant;
 		}, 0);
 		const delivery = SEND_FREE - total <= 0 ? 0 : PRICE_DELIVERY;
 		return total + delivery;

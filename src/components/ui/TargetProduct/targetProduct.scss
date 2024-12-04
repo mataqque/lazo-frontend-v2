@@ -1,0 +1,67 @@
+.btn-buy {
+	&.added {
+		background-color: var(--success);
+		.icon-add-product {
+			background-color: white;
+		}
+		.text-green-100 {
+			color: white;
+		}
+	}
+}
+.slider-card {
+	.slick-arrow {
+		width: 2rem;
+		height: 2rem;
+		font-size: 0;
+		border-radius: 100%;
+		background-color: rgba(255, 255, 255, 0.363);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		z-index: 2;
+		display: flex !important;
+		align-items: center;
+		justify-items: center;
+		&::after {
+			content: '';
+			background-color: rgb(0, 0, 0);
+			width: 60%;
+			height: 60%;
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			display: flex;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			@media (max-width: 500px) {
+				width: 1.5rem;
+			}
+		}
+	}
+	.slick-prev {
+		left: 0.5rem;
+		&::after {
+			mask-image: url('../../../assets/multimedia/icons/icon-signal-left.svg');
+		}
+	}
+	.slick-next {
+		right: 0.5rem;
+		&::after {
+			mask-image: url('../../../assets/multimedia/icons/icon-signal-right.svg');
+		}
+	}
+	.slick-dots {
+		bottom: 1rem;
+		li {
+			background-color: white;
+			opacity: 0.8;
+			&.slick-active {
+				background-color: var(--secondary);
+			}
+		}
+	}
+}
