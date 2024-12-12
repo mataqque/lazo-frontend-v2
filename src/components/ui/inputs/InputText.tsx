@@ -19,7 +19,7 @@ export const InputText = (props: IInputProps) => {
 				{...field}
 				className={
 					cn(
-						`text-1/1 w-full border border-solid px-6 text-white rounded-lg border-borderinput min-h-[4rem] mobile:text-1/0 placeholder:text-1/1 mobile:placeholder:text-1/0 ${className} `
+						`text-1/1 w-full border border-solid px-6 text-letterinput rounded-lg border-borderinput min-h-[4rem] mobile:text-1/0 placeholder:text-1/1 mobile:placeholder:text-1/0 ${className} `
 					) +
 					' ' +
 					`${extraClass} ${getValidClass(meta)}`

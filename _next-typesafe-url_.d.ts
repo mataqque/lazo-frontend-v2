@@ -17,6 +17,9 @@ declare module "@@@next-typesafe-url" {
     "/account/login": StaticRoute;
     "/account/recoveryPassword": StaticRoute;
     "/account/register": StaticRoute;
+    "/myorder/cesta": StaticRoute;
+    "/myorder/checkout": StaticRoute;
+    "/myorder/information": StaticRoute;
     "/": StaticRoute;
     "/regalos": StaticRoute;
   }
