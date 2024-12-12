@@ -155,7 +155,7 @@ input.--valid {
 select.--invalid,
 button.--invalid,
 input.--invalid {
-	border: 1px solid var(--danger);
+	border-color: var(--danger);
 
 	& ~ .icon-error {
 		display: flex;

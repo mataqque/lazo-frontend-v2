@@ -2,23 +2,22 @@
 import './footer.scss';
 import iconBrand from '../../../assets/images/global/icons/icon-brand.png';
 import Image from 'next/image';
-import { FormContainer } from '@/common/form/Form';
 import { formSchemaFooter } from './formSchema';
-import { FormStyled } from '@/components/ui-global/Form/Form';
-import { ParametersForm } from '@/interface';
-import { InputText } from '@/components/ui-global/Inputs/InputText';
 import Link from 'next/link';
+import { FormContainer } from '@/components/common/form/Form';
+import { InputText } from '@/components/ui/inputs/InputText';
+import { ParametersForm } from '@/components/common/form/interface';
 // import { ParametersForm } from '@/app/account/interfaces/interface';
 export const Footer = (props: any) => {
 	const initialValues = {
-		newletters: '',
+		email: '',
 	};
 	const onsubmit = (values: any) => {};
 	return (
 		<footer className='footer z-10 relative'>
-			<div className='container flex flex-row py-10 md:flex-wrap !py-12'>
+			<div className='container flex flex-row md:flex-wrap !py-12'>
 				<div className='content-brand '>
-					<div className='mask-left icon-brand bg-secondary w-5 bg-white' />
+					<div className='mask-left icon-brand bg-secondary w-5' />
 					<div className='flex'>
 						<a href='' target='_blank' className='rounded-full flex items-center justify-center w-12 h-12 duration-300 cursor-pointer mr-4 border border-white border-solid'>
 							<div className='icon-mask icon-facebook h-4 w-4 mask-center bg-white'></div>
@@ -33,18 +32,21 @@ export const Footer = (props: any) => {
 				</div>
 				<div className='flex content-column mr-auto w-max'>
 					<div className='column flex flex-col'>
-						<Link href='/' className='t-column text-secondary IBMPlexSans-Bold text-white'>
+						<Link href='/' className='t-column text-white IBMPlexSans-Bold'>
 							Inicio
 						</Link>
-						<Link href='/producto' className='sub-t-column IBMPlexSans-Bold text-white'>
-							Producto
+						<Link href='/blog' className='sub-t-column IBMPlexSans-Bold text-white'>
+							Blog
+						</Link>
+						<Link href='/Regalos' className='sub-t-column IBMPlexSans-Bold text-white'>
+							Regalos
 						</Link>
 						<Link href='/contacto' className='sub-t-column text-white'>
 							Contacto
 						</Link>
 					</div>
 					<div className='column flex flex-col'>
-						<Link href='/peluches' className='t-column text-secondary IBMPlexSans-Bold text-white'>
+						<Link href='/peluches' className='t-column text-white IBMPlexSans-Bold'>
 							Peluches
 						</Link>
 						<Link href='/osos' className='sub-t-column text-white'>
@@ -61,7 +63,7 @@ export const Footer = (props: any) => {
 						</Link>
 					</div>
 					<div className='column flex flex-col'>
-						<Link href='/Bisuteria' className='t-column text-secondary IBMPlexSans-Bold text-white'>
+						<Link href='/Bisuteria' className='t-column text-white IBMPlexSans-Bold'>
 							Bisutería
 						</Link>
 						<Link href='/anillos' className='sub-t-column text-white'>
@@ -73,22 +75,30 @@ export const Footer = (props: any) => {
 					</div>
 				</div>
 				<div className='flex flex-col newletters'>
-					<span className='t-column text-secondary IBMPlexSans-Bold text-white mb-4'>Noticias</span>
+					<span className='t-column text-white text-1/3 IBMPlexSans-Bold mb-4'>Noticias</span>
 					<FormContainer initialValues={initialValues} validationSchema={formSchemaFooter} onSubmit={onsubmit}>
 						{(form: any) => {
 							const { handleSubmit, isSubmitting }: ParametersForm = form;
 							return (
-								<FormStyled onSubmit={handleSubmit}>
-									<span className='text-white mb-2 flex'>Recibe noticias sobre nuestros productos</span>
+								<form onSubmit={handleSubmit}>
+									<span className='text-white mb-6 flex'>Recibe noticias sobre nuestros productos</span>
 									<div className='flex content-newletters gap-4'>
-										<div className='inp'>
-											<InputText name='name' placeholder='Example@example.com' />
+										<div className='inp '>
+											<InputText
+												name='email'
+												placeholder='Example@example.com'
+												className='placeholder:text-[#ffffff86] text-white'
+												//  className='placeholder:text-[#ffffff86] text-white font-ibm_medium border-none border-b'
+											/>
 										</div>
-										<button type='submit' className='submit rounded-lg bg-secondary border-solid border-white border text-white px-8 mx-auto flex items-center'>
-											<span>Subscribir</span>
+										<button
+											type='submit'
+											className='submit rounded-lg bg-white text-secondary duration-300 min-h-[4rem] border-solid border-white border px-8 mx-auto flex items-center'
+										>
+											<span>Subcribrirse</span>
 										</button>
 									</div>
-								</FormStyled>
+								</form>
 							);
 						}}
 					</FormContainer>
@@ -96,12 +106,12 @@ export const Footer = (props: any) => {
 			</div>
 			<div className='w-full py-6 bar-footer'>
 				<div className='container flex justify-between items-between'>
-					<span className='text-white'>Derechos reservados Lazo, 2023 </span>
+					<span className='text-white font-ibm_light text-0/9'>Derechos reservados Lazo, 2023 </span>
 
 					<div className=''>
-						<span className='mx-2 text-white'>Legal</span>
-						<span className='mx-2 text-white'>Politicas de privacidad</span>
-						<a href='/terminos-y-condiciones' className='mx-2 text-white'>
+						<span className='mx-2 text-white font-ibm_light text-0/9'>Legal</span>
+						<span className='mx-2 text-white font-ibm_light text-0/9'>Politicas de privacidad</span>
+						<a href='/terminos-y-condiciones' className='mx-2 text-white font-ibm_light text-0/9'>
 							Términos y Condiciones
 						</a>
 					</div>

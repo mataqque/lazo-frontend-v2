@@ -2,8 +2,6 @@
 import { type IInputPasswordProps, type IInputProps } from './interface';
 import { HTMLInputTypeAttribute, useEffect, useRef, useState } from 'react';
 import { IconTogglePassword } from './iconInputs';
-// import iconValid from '../../../assets/multimedia/icons/check.png';
-// import iconError from '../../../assets/multimedia/icons/error.png';
 import { useField } from 'formik';
 import { getInputClasses, getValidClass } from './helpers';
 import { delayfunc } from '@/helpers/helpers';
@@ -13,20 +11,16 @@ import { setInputTextProps } from '@/components/common/form/Form';
 export const InputText = (props: IInputProps) => {
 	const { name, className = '', placeholder, extraClass = '', defaultValue = '', type, ...rest } = props;
 	const [field, meta, helpers] = useField({ name });
-	const init = async (): Promise<void> => {
-		delayfunc(() => {
-			helpers.setValue(defaultValue).catch(console.error);
-		}, 200);
-	};
-	useEffect(() => {
-		init();
-	}, [defaultValue]);
+
 	return (
 		<div className={`relative ${props.icon ? 'include-icon' : ''}`}>
 			<input
+				id='input'
 				{...field}
 				className={
-					cn(`text-1/1 w-full border-b border-solid border-borderinput min-h-[4rem] mobile:text-1/0 placeholder:text-1/1 mobile:placeholder:text-1/0 ${className} `) +
+					cn(
+						`text-1/1 w-full border border-solid px-6 text-white rounded-lg border-borderinput min-h-[4rem] mobile:text-1/0 placeholder:text-1/1 mobile:placeholder:text-1/0 ${className} `
+					) +
 					' ' +
 					`${extraClass} ${getValidClass(meta)}`
 				}

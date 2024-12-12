@@ -8,8 +8,8 @@ import { cantItemsToSameProduct, cantItemsToSameProductLess, deleteItem } from '
 import Link from 'next/link';
 import { PRICE_DELIVERY, SEND_FREE } from '@/store/config';
 import { setActiveCart } from '@/store/globalSlice/modalCart';
-import { IProductSchema } from '@/store/interface/products.interface';
 import { currentConvert } from '@/helpers/helpers';
+import { IProductSchema } from '@/store/interface/global.interface';
 export const CartBuy = () => {
 	const dispatch = useDispatch();
 	const [active, setActive] = useState('');
@@ -37,11 +37,11 @@ export const CartBuy = () => {
 						return (
 							<div className='item-product' key={index + 'cart-buy'}>
 								<div className='content-img select-none'>
-									<img src={item.attributes?.image?.data[0]?.attributes.url} alt='' />
+									<img src={item?.media[0].url} alt='' />
 								</div>
 								<div className='flex flex-col content-attr '>
-									<span className='text-secondary select-none leading-tight'>{item?.attributes?.nameproduct}</span>
-									<span className='text-primary select-none'>{currentConvert(item?.attributes?.price)}</span>
+									<span className='text-secondary select-none leading-tight'>{item.name}</span>
+									<span className='text-primary select-none'>{currentConvert(item?.price)}</span>
 								</div>
 								<div className='content-cant'>
 									<div

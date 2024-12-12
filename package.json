@@ -22,6 +22,7 @@
 		"drizzle-orm": "^0.36.4",
 		"formik": "^2.4.6",
 		"framer-motion": "^11.11.17",
+		"javascript-time-ago": "^2.5.11",
 		"next": "15.0.3",
 		"next-auth": "^4.24.10",
 		"next-typesafe-url": "^4.1.1",
