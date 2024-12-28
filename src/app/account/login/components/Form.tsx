@@ -94,7 +94,7 @@ export const FormLogin = () => {
 									Usuario o contraseña inválidos
 								</div>
 							)}
-							<button type='submit' className='btn-submit h-12 w-full border border-solid rounded-lg border-secondary bg-secondary text-white'>
+							<button type='submit' className='btn-submit h-[3.5rem] w-full border border-solid rounded-lg border-secondary bg-secondary text-white'>
 								Ingresar
 							</button>
 						</form>

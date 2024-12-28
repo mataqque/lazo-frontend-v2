@@ -19,7 +19,7 @@ export const InputText = (props: IInputProps) => {
 				{...field}
 				className={
 					cn(
-						`text-1/1 w-full border border-solid px-6 text-letterinput rounded-lg border-borderinput min-h-[4rem] mobile:text-1/0 placeholder:text-1/1 mobile:placeholder:text-1/0 ${className} `
+						`text-1/1 w-full border border-solid px-6 text-letterinput rounded-lg border-borderinput h-[3.5rem] mobile:text-1/0 placeholder:text-1/1 mobile:placeholder:text-1/0 ${className} `
 					) +
 					' ' +
 					`${extraClass} ${getValidClass(meta)}`
@@ -51,7 +51,7 @@ export const InputTextPassword = (props: IInputPasswordProps) => {
 		<div className={`relative ${rest?.className ? rest.className : ''}`}>
 			<div className={`content-sub-input ${props.icon ? 'include-icon' : ''}`}>
 				<input
-					className={`w-full border border-solid border-borderinput h-12 px-4 rounded-lg text-letterinput placeholder:text-letterinput ${getInputClasses(name, form)}`}
+					className={`w-full border border-solid border-borderinput h-[3.5rem] px-4 rounded-lg text-letterinput placeholder:text-letterinput ${getInputClasses(name, form)}`}
 					type={iconShowPassword ? 'password' : 'text'}
 					placeholder={placeholder || ''}
 					{...setInputTextProps(name, form)}

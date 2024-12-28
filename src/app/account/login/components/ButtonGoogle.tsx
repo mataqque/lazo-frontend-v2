@@ -8,7 +8,7 @@ export const GoogleProvider = () => {
 		signIn('google');
 	};
 	return (
-		<div className='flex items-center justify-center border border-solid rounded-lg border-gray-200 py-2 px-4 text-secondary bg-white cursor-pointer' onClick={handleSignIn}>
+		<div className='flex items-center justify-center border border-solid rounded-lg h-[3.5rem] border-gray-200 py-2 px-4 text-secondary bg-white cursor-pointer' onClick={handleSignIn}>
 			<Image src={google} alt='google' className='mr-4'></Image>
 			<span className='text-secondary'>Acceder con Google</span>
 		</div>

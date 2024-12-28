@@ -11,5 +11,9 @@ const fetching = async () => {
 
 export default async function Regalos() {
 	const data = await fetching();
-	return <main className='pt-[8.3rem] mobile:pt-[7.8rem] relative background_img'>{/* <SectionCollectionCategory products={data}></SectionCollectionCategory> */}</main>;
+	return (
+		<main className='relative background_img'>
+			<SectionCollectionCategory categories={data}></SectionCollectionCategory>
+		</main>
+	);
 }
